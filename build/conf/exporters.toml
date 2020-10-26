@@ -1,0 +1,29 @@
+listen = ":6000"
+scrapepath = "/scrape"
+metricpath = "/metrics"
+
+[log]
+Filename = "exporters.log"
+Level = "Info"
+MaxSize = 1024
+MaxAge = 7
+MaxBackups = 7
+LocalTime = true
+Compress = true
+InitialFields = {"app"="exporters"}
+
+[exporters.elasticsearch]
+defaultuser = "elastic"
+defaultpass = ""
+
+[exporters.redis]
+[[exporters.redis.auths]]
+instance = "127.0.0.1:6379"
+pass = ""
+[[exporters.redis.auths]]
+instance = "127.0.0.1:6378"
+pass = ""
+
+[exporters.mysql]
+defaultuser = "readonly"
+defaultpass = "readonly"

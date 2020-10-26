@@ -1,0 +1,7 @@
+build/logs/*
+build/bin
+.DS_Store
+.*.sw*%
+go.sum
+*.tar.gz
+deploy.sh

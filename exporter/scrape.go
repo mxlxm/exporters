@@ -49,7 +49,7 @@ func ScrapeHandler(w http.ResponseWriter, r *http.Request) {
 			opts.Pass = pass
 			elasticsearch.SetLogger(log)
 			err = elasticsearch.NewEsExporter(target, opts)
-		case "mysql":
+		case "mysql", "polardb":
 			opts := mysql.DefaultOptions()
 			opts.Registry = registry
 			opts.User = user

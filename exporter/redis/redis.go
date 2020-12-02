@@ -1174,7 +1174,7 @@ func (e *Exporter) scrapeRedisHost(ch chan<- prometheus.Metric) error {
 
 	if e.options.SetClientName {
 		if _, err := doRedisCmd(c, "CLIENT", "SETNAME", "redis_exporter"); err != nil {
-			log.Errorf("Couldn't set client name, err: %s", err)
+			log.Errorf("Couldn't set client name for: %s, err: %s", e.redisAddr, err)
 		}
 	}
 

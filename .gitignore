@@ -1,5 +1,4 @@
 build/logs/*
-build/conf/*
 build/bin
 .DS_Store
 .*.sw*%
